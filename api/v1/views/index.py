@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Index """
+"""Returns views of the routes"""
 from models.amenity import Amenity
 from models.city import City
 from models.place import Place
