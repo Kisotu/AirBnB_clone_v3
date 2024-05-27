@@ -21,7 +21,11 @@ def status():
 def stats():
     """ Retrieves the number of each objects"""
 
-    classes = {"Amenity": "amenities", "City": "cities", "Place": "places",
-               "Review": "reviews", "State": "states", "User": "users"}
-    return jsonify({v: storage.count(k) for k, v in all_classes.items()
-                    if storage.count(k)})
+    classes = [Amenity, City, Place, Review, State, User]
+    names = ["amenities", "cities", "places", "reviews", "states", "users"]
+
+    numb_objs = {}
+    for i in range(len(classes)):
+        numb_objs[names[i]] = storage.count(classes[i])
+
+    return jsonify(numb_objs)
