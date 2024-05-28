@@ -28,12 +28,14 @@ def close_db(error):
 def not_found(error):
     """404 Error"""
 
-    return make_response(jsonify({'error': "Not found"}), 404)
+    return make_response(jsonify({"error": "Not found"}), 404)
+
 
 app.config['SWAGGER'] = {
     'title': 'AirBnB clone Restful API',
     'uiversion': 3
 }
+
 
 Swagger(app)
 
